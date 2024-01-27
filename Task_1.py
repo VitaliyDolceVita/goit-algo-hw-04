@@ -2,12 +2,12 @@ def total_salary(path):
     total_salary = 0
     num_developers = 0
     try:
-        with open(path, 'r', encoding='utf-8') as file:
-            for line in file:
+        with open(path, 'r', encoding='utf-8') as file:  # Відкриваєм файл через контекстний менеджер, вказуєм кодування utf-8
+            for line in file:  # Проходимся по рідках файла
                 name, salary = line.strip().split(',')  # Розділяємо рядок на прізвище розробника та його заробітну плату
                 total_salary += int(salary)  # Додаємо заробітну плату до загальної суми
                 num_developers += 1  # Збільшуємо лічильник розробників
-    except FileNotFoundError:
+    except FileNotFoundError:  # Обробляємо помилки
         print("Файл не знайдено.")
         return None
     except Exception as e:
