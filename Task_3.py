@@ -1,6 +1,6 @@
 import os
 import sys
-from colorama import Fore, Style
+from colorama import Fore
 
 
 def list_files_and_directories(directory, indent=""):
@@ -12,7 +12,7 @@ def list_files_and_directories(directory, indent=""):
                     print(indent + Fore.MAGENTA + entry.name )
                     list_files_and_directories(entry.path, indent + "  ")
                 else:
-                    print(indent + Fore.GREEN +""+ entry.name)
+                    print(indent + Fore.GREEN + entry.name)
     except FileNotFoundError:
         print(Fore.RED + f"Директорія {directory} не знайдена.")
     except PermissionError:
