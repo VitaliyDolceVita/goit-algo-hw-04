@@ -22,7 +22,7 @@ def add_contact(name, phone):  # Функція для додавання нов
     return "Contact added."
 
 def change_contact(name, new_phone):  # Функція для зміни номера телефону існуючого контакту.
-    if name in contacts:  # Якщо
+    if name in contacts:  # Якщо ім'я є в контактах
         contacts[name] = new_phone  # Записуєм значення нового телефону по ключу "name".
         return "Contact updated."
     else:
