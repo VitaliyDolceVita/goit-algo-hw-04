@@ -7,8 +7,8 @@ def list_files_and_directories(directory, indent=""):
     try:
         with os.scandir(directory) as entries:
             for entry in entries: # Проходимось по елементах 
-                if entry.is_dir():  # Якщо обь'єк є папкою 
-                    print(indent + Fore.MAGENTA + entry.name )  # Виводи відступ, назву папки кольору магента
+                if entry.is_dir():  # Якщо обь'єкт є папкою 
+                    print(indent + Fore.MAGENTA + entry.name )  # Виводимо відступ, назву папки кольору магента
                     list_files_and_directories(entry.path, indent + "  ")  # збільшуємо відступ при кожному рекурсивному виклику функції
                 else:
                     print(indent + Fore.GREEN + entry.name)  # Виводи відступ, назву файла зелеого кольору
